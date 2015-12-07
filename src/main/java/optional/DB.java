@@ -3,6 +3,7 @@ package optional;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Created by Gaplo917 on 6/12/2015.
@@ -23,6 +24,14 @@ public class DB {
         return u;
     }
     return null;
+  }
+
+  public static Optional<User> findUserByIdOpt(int id){
+    for(User u : users){
+      if(u.getId() == id)
+        return Optional.of(u);
+    }
+    return Optional.empty();
   }
 
   public static Country findCountryById(String id){
