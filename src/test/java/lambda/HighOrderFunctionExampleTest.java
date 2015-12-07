@@ -18,8 +18,8 @@ public class HighOrderFunctionExampleTest {
 
   @Test
   public void testWithLogging(){
-    int result = HighOrderFunctionExample.funcWithLogging.apply(1);
+    double result = HighOrderFunctionExample.funcThenToDouble.apply(1);
 
-    assertEquals(result,8);
+    assertEquals(result,8,0.001);
   }
 }
