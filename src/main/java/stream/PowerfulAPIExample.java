@@ -18,13 +18,13 @@ public class PowerfulAPIExample {
             .collect(Collectors.toList());
   }
 
-  public Map<String,User> listToMap(List<User> users){
+  public Map<String,List<User>> listToMap(List<User> users){
 
     return users
             .stream()
-            .collect(Collectors.toMap(
+            .collect(Collectors.groupingBy(
               User::getCountryId,
-              (user) -> user
+              Collectors.toList()
             ));
   }
 }
